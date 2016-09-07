@@ -1,4 +1,4 @@
-package com.example;
+package ro.jtonic.handson.springboot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
