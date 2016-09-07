@@ -13,6 +13,7 @@
 1. Validation (JSR-303)
 1. Messaging AMQP
 1. Logstash, Kibana, ElasticSearch (logging)
+1. Using AngularJS on the clien side
 
 ######Notes:
 1. After I've been reading about it and seeing some presentations I came to the conclusion spring boot is a great project and is likely to make the life of the java enterprise developer a lot easier (more time for the family).
@@ -28,6 +29,7 @@
         MYSQL_DB
         MYSQL_USERNAME
         MYSQL_PASSWORD 
+1. Execute the sql script db/db.sql
 1. Restart the IDE in order to access the newly created variables. Start the application as a Spring boot, or
 1. using maven: mvn clean install spring-boot:run
 1. Access the application using the following urls
