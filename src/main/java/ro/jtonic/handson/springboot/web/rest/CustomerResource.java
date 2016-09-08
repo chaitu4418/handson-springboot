@@ -19,7 +19,7 @@ public class CustomerResource {
         this.customerRepository = customerRepository;
     }
 
-    @RequestMapping("/customers")
+    @RequestMapping("/customers.rest")
     String home() {
         final Customer customer = customerRepository.findAll().get(0);
         return customer.getName();
