@@ -6,14 +6,32 @@
 1. [V] Simple Spring MVC example.
 1. [V] Integrate Spring Data JPA into the project.
 1. [V] Integrate Spring data rest into the project.
-1. [>] Spring webmvc with Thymeleaf (template engine - html)
+1. [V] Spring webmvc with Thymeleaf (template engine - html)
+1. [V] A simple example to expose a custom Data JPA method using Data Rest 
+1. [>] Custom JSON serialization to include both name and id
+1. Include api in the built url of the REST services
+        
+        Instead of:
+            http://localhost:8080/customers
+        should have
+            http://localhost:8080/api/customers
+1. Validation (JSR-303)
+1. Binding: JPA model - MVC data model
+1. Twitter bootstrap - support provided by webjars
+1. Using AngularJS on the client side
 1. Spring Couchbase
 1. Spring Cassandra
 1. Spring cache (JSR-107 JCache, Hazelcast)
-1. Validation (JSR-303)
 1. Messaging AMQP
 1. Logstash, Kibana, ElasticSearch (logging)
-1. Using AngularJS on the client side
+1. Install the spring boot based application in GCP (Google Cloud Platform)
+1. Load balancing - install the application in many nodes and balance the calls between them
+1. Spring Session - see what it is all about.
+1. Configure the ssl for tomcat and use https for all services
+1. Simple authentication example
+1. Simple authorization example
+1. Try to use spring-boot-devtools and chrome LiveReload extensions for speeding up the ui development.
+1. Try to use the spring-loaded for hot swapping 
 
 ######Notes:
 1. Exposing JPA repositories (which means CRUD operations of the JPA entities is just the matter of including the following maven dependency.
@@ -36,7 +54,7 @@
 1. Access the application using the following urls
     
         http://localhost:8080/customers.rest
-        http://localhost:8080/customers.php
+        http://localhost:8080/customers.do
 1. Using the REST endpoints (created by spring jpa data):
         
         http://localhost:8080/customers
@@ -48,16 +66,16 @@
         /{repository}        
 1. For instance if one want to create a new customer, he/she has to curl the following 
 
-        curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: cc9c4c00-4303-3fa6-6073-17a8f1244f5d" -d '{
-            "name": "Magdalena Jipa"
-            
-        }' "http://localhost:8080/customers"
+        curl -v -X POST -H "Content-Type: application/json" -d '{"name": "Magdalena Jipa"}' "http://localhost:8080/customers"
 1. If he/she wants to modify one, execute the following curl command:
 
-        curl -X PUT -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: f38bbe4c-0486-38fa-0393-cbf74f30449c" -d '{
-            "name": "Magdalena Pazargic"
-            
-        }' "http://localhost:8080/customers/11"
+        curl  -v -X PUT -H "Content-Type: application/json" -d '{"name": "Magdalena Pazargic"}' "http://localhost:8080/customers/11"
+1. search using a custom findBy... method in the CustomerRepository
     
+        curl -X GET -v "http://localhost:8080/customers/search/byName?name=Antonel%20Pazargic"
+1. search by customer id
         
+        curl -v -X GET "http://localhost:8080/customers/search/byId?id=1"
+    
+            
        
