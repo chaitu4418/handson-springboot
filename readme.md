@@ -8,8 +8,11 @@
 1. [V] Integrate Spring data rest into the project.
 1. [V] Spring webmvc with Thymeleaf (template engine - html)
 1. [V] A simple example to expose a custom Data JPA method using Data Rest 
-1. Use yaml application config file instead of properties one. 
-1. [>] Custom JSON serialization to include both name and id
+1. [V] Use yaml application config file instead of properties one. 
+1. [V] Use two profiles: 
+    1. production:  mysql datasource
+    2. dev:         h2 datasource
+1. Custom JSON serialization to include both name and id
 1. Include api in the built url of the REST services
         
         Instead of:

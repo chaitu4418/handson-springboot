@@ -1,6 +1,26 @@
 spring:
+  profiles:
+    active:             default
+    include:            dev
+
+---
+spring:
+  profiles:             default
+  application:
+    name:               Handson-SpringBoot
+server:
+  port:                 8080
+
+---
+spring:
+  profiles:             dev
+  # the datasource for the dev is h2 which is automatically configured by spring boot as soon as the h2 is in the classpath. Check the maven dependecies to see if it is.
+
+---
+spring:
+  profiles:             prod
   datasource:
-    url:                  jdbc:mysql://localhost:3306/${MYSQL_DB}?serverTimezone=UTC&useSSL=false
+    url:                jdbc:mysql://localhost:3306/${MYSQL_DB}?serverTimezone=UTC&useSSL=false
     username:           ${MYSQL_USERNAME}
     password:           ${MYSQL_PASSWORD}
     validation-query:   select 1
@@ -9,7 +29,4 @@ spring:
     properties:
       hibernate:
         dialect:        org.hibernate.dialect.MySQL5Dialect
-
-
-
 
