@@ -8,6 +8,7 @@
 1. [V] Integrate Spring data rest into the project.
 1. [V] Spring webmvc with Thymeleaf (template engine - html)
 1. [V] A simple example to expose a custom Data JPA method using Data Rest 
+1. Use yaml application config file instead of properties one. 
 1. [>] Custom JSON serialization to include both name and id
 1. Include api in the built url of the REST services
         
@@ -70,6 +71,9 @@
 1. If he/she wants to modify one, execute the following curl command:
 
         curl  -v -X PUT -H "Content-Type: application/json" -d '{"name": "Magdalena Pazargic"}' "http://localhost:8080/customers/11"
+1. Delete a customer
+    
+        curl -v -X DELETE "http://localhost:8080/customers/7"
 1. search using a custom findBy... method in the CustomerRepository
     
         curl -X GET -v "http://localhost:8080/customers/search/byName?name=Antonel%20Pazargic"
