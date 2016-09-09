@@ -1,7 +1,8 @@
-### This project is about the spring boot, the latest buzz in the spring community.
+## This project is about the spring boot, the latest buzz in the spring community.
 
-######What I would like to use in this project (which I would like to consider the starting point for any technical assignment;) 
-###### TODOs:
+#####What I would like to use in this project (which I would like to consider the starting point for any technical assignment;) 
+TODOs:
+-
 1. [V] Simple Spring rest example
 1. [V] Simple Spring MVC example.
 1. [V] Integrate Spring Data JPA into the project.
@@ -12,7 +13,7 @@
 1. [V] Use two profiles: 
     1. production:  mysql datasource
     2. dev:         h2 datasource
-1. Custom JSON serialization to include both name and id
+1. [V] Custom JSON serialization to include both name and id, and to exclude properties with null value from the json.
 1. Include api in the built url of the REST services
         
         Instead of:
@@ -37,24 +38,29 @@
 1. Try to use spring-boot-devtools and chrome LiveReload extensions for speeding up the ui development.
 1. Try to use the spring-loaded for hot swapping 
 
-######Notes:
+Notes:
+-
 1. Exposing JPA repositories (which means CRUD operations of the JPA entities is just the matter of including the following maven dependency.
 1. I am impressed how much RESTful services are exposed by spring data rest, w/o writing a single line of code. IMPRESSIVE!!!
 1. In order to quick and easily test the REST services, benefiting from the calls history, user friendly interface and saving the rest command as HTTP, curl calls, use the **__POSTMAN__** chrome extension.
 
 
-###### How to run:
+How to run:
+-
 1. Install java 8
 1. Install mvn 3
-1. Install the mysql server
-1. Create the following env variables: 
+1. [optional - in case of profiles.active=prod] Install the mysql server
+1. [optional - in case of profiles.active=prod] Create the following env variables: 
         
         MYSQL_DB
         MYSQL_USERNAME
         MYSQL_PASSWORD 
-1. Execute the sql script db/db.sql
-1. Restart the IDE in order to access the newly created variables. Start the application as a Spring boot, or
+1. [optional - in case of profiles.active=prod] Execute the sql script db/db.sql
+1. [optional - in case of profiles.active=prod]  Restart the IDE in order to access the newly created variables. Start the application as a Spring boot, or
 1. using maven: mvn clean install spring-boot:run
+
+How to test:
+-
 1. Access the application using the following urls
     
         http://localhost:8080/customers.rest
