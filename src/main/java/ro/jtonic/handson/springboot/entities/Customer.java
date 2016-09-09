@@ -1,5 +1,7 @@
 package ro.jtonic.handson.springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +19,9 @@ public class Customer implements Serializable {
     private Long id;
 
     private String name;
+
+    // @JsonIgnore
+    private Byte age;
 
     public Customer() {
     }
@@ -37,8 +42,17 @@ public class Customer implements Serializable {
         this.name = name;
     }
 
+    public Byte getAge() {
+        return age;
+    }
+
+    public void setAge(Byte age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
-        return this.getName();
+        return this.getName() + " - " + this.getAge();
     }
+
 }
