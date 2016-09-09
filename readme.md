@@ -61,6 +61,13 @@ How to run:
 
 How to test:
 -
+In case of the dev environment the embedded h2 database is used. To see the db data do the followings:
+* open the http://localhost:8080/console
+* use the following connection info
+    * driver:       org.h2.Driver
+    * url:          jdbc:h2:mem:myDb
+    * username:     sa
+    * password: 
 1. Access the application using the following urls
     
         http://localhost:8080/customers.rest
