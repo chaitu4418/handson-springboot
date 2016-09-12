@@ -26,6 +26,15 @@ public class Customer implements Serializable {
     public Customer() {
     }
 
+    public Customer(String name, Byte age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Customer(String name) {
+        this(name, null);
+    }
+
     public Long getId() {
         return id;
     }

@@ -9,7 +9,11 @@ app.config(function ($routeProvider) {
             templateUrl: '/views/roles.html',
             controller: 'rolesController'
         })
+        .when('/customers', {
+            templateUrl: '/views/customers.html',
+            controller: 'customersController'
+        })
         .otherwise(
-            { redirectTo: '/'}
-        )
+            {redirectTo: '/'}
+        );
 });

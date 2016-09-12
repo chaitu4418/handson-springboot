@@ -20,20 +20,21 @@ TODOs:
             http://localhost:8080/customers
         should have
             http://localhost:8080/api/customers
+1. Using AngularJS on the client side
+    1. [V] Simple AngularJS application
+    1. [V] Use AngularJS with REST services ($http injection)
+    1. Use AngularJS with the REST resources ($resource)
+1. Twitter bootstrap - support provided by webjars
 1. Validation (JSR-303)
 1. Binding: JPA model - MVC data model
-1. Twitter bootstrap - support provided by webjars
-1. Using AngularJS on the client side
-    1. [V]Simple AngularJS application
-    1. [V]Use AngularJS with REST services
-1. Spring Couchbase
-1. Spring Cassandra
 1. Spring cache (JSR-107 JCache, Hazelcast)
 1. Messaging AMQP
 1. Logstash, Kibana, ElasticSearch (logging)
 1. Install the spring boot based application in GCP (Google Cloud Platform)
 1. Load balancing - install the application in many nodes and balance the calls between them
 1. Spring Session - see what it is all about.
+1. Spring Couchbase
+1. Spring Cassandra
 1. Configure the ssl for tomcat and use https for all services
 1. Simple authentication example
 1. Simple authorization example
