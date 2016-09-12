@@ -24,6 +24,8 @@ TODOs:
 1. Binding: JPA model - MVC data model
 1. Twitter bootstrap - support provided by webjars
 1. Using AngularJS on the client side
+    1. [V]Simple AngularJS application
+    1. [V]Use AngularJS with REST services
 1. Spring Couchbase
 1. Spring Cassandra
 1. Spring cache (JSR-107 JCache, Hazelcast)
@@ -97,5 +99,5 @@ In case of the dev environment the embedded h2 database is used. To see the db d
         
         curl -v -X GET "http://localhost:8080/customers/search/byId?id=1"
     
-            
+1. point the browser to ***http://localhost:8080/index.html*** to see the AngularJS integration with spring boot web app.            
        
