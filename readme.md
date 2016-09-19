@@ -3,6 +3,15 @@
 #####What I would like to use in this project (which I would like to consider the starting point for any technical assignment;) 
 TODOs:
 -
+1. Spring cache (JSR-107 - JCache, ehcache|Hazelcast)
+1. Simple example with the Spring HATEOAS to create correct REST services.
+1. Validation (JSR-303)
+1. i18n
+    1. spring boot thymeleaf pages
+    1. SPA AngularJS
+1. deploy the jar to github and make it the dependency of another project
+1. integration tests - failsafe maven plugin
+
 1. [V] Simple Spring rest example
 1. [V] Simple Spring MVC example.
 1. [V] Integrate Spring Data JPA into the project.
@@ -14,37 +23,50 @@ TODOs:
     1. production:  mysql datasource
     2. dev:         h2 datasource
 1. [V] Custom JSON serialization to include both name and id, and to exclude properties with null value from the json.
-1. Include api in the built url of the REST services
+1. Using AngularJS on the client side
+    1. [V] Simple AngularJS application
+    1. [V] Use AngularJS with REST services ($http injection)
+    1. Use AngularJS with the REST resources ($resource)
+1. [V] Include api in the built url of the REST services (done using the server.context-path application configuration)
         
         Instead of:
             http://localhost:8080/customers
         should have
             http://localhost:8080/api/customers
-1. Using AngularJS on the client side
-    1. [V] Simple AngularJS application
-    1. [V] Use AngularJS with REST services ($http injection)
-    1. Use AngularJS with the REST resources ($resource)
-1. Twitter bootstrap - support provided by webjars
-1. Validation (JSR-303)
+1. [>] Twitter bootstrap - support provided by webjars
+1. Integration of spring security
+    1. [V] for classic web application (spring webmvc with thymeleaf)
+    1. for SPA with AngularJS
+    1. using a OAuth2
+    1. use @PreAuthorize("hasRole(@roles.ADMIN)") for services and data repositories
+    1. single sign on with FB, Google, Linkedin, Twitter
+    1. Handle csrf and remove the csrf().disable() in spring security configuration.
+    1. Security with spring data jpa model
+        https://github.com/spring-projects/spring-data-examples/tree/master/rest/security
+1. Files uploading. Blob, REST, Data REST, AngularJS/Thymeleaf
 1. Binding: JPA model - MVC data model
-1. Spring cache (JSR-107 JCache, Hazelcast)
 1. Messaging AMQP
 1. Logstash, Kibana, ElasticSearch (logging)
-1. Install the spring boot based application in GCP (Google Cloud Platform)
+1. Install the spring boot based application in Cloud Foundry, Heroku (GCP (Google Cloud Platform)).
 1. Load balancing - install the application in many nodes and balance the calls between them
 1. Spring Session - see what it is all about.
 1. Spring Couchbase
 1. Spring Cassandra
 1. Configure the ssl for tomcat and use https for all services
-1. Simple authentication example
-1. Simple authorization example
+1. Scheduling example
+1. Spring integration example
+1. Simple example with websockets
+1. Try to integrate swagger as REST services documentation.
+1. Security with stormpath 
+        https://docs.stormpath.com/java/spring-boot-web/index.html
+1. Try to use scala, and see how the IntelliJ Idea handle it. If there is no support for this mix then drop it and stay with java8
 1. Try to use spring-boot-devtools and chrome LiveReload extensions for speeding up the ui development.
 1. Try to use the spring-loaded for hot swapping 
 
 Notes:
 -
 1. Exposing JPA repositories (which means CRUD operations of the JPA entities is just the matter of including the following maven dependency.
-1. I am impressed how much RESTful services are exposed by spring data rest, w/o writing a single line of code. IMPRESSIVE!!!
+1. I am very impressed of the degree REST services are exposed by spring data rest, w/o writing a single line of code. IMPRESSIVE!!!
 1. In order to quick and easily test the REST services, benefiting from the calls history, user friendly interface and saving the rest command as HTTP, curl calls, use the **__POSTMAN__** chrome extension.
 
 
@@ -102,3 +124,12 @@ In case of the dev environment the embedded h2 database is used. To see the db d
     
 1. point the browser to ***http://localhost:8080/index.html*** to see the AngularJS integration with spring boot web app.            
        
+       
+Questions
+=
+1. what is a clickjacking attack
+    In spring security by default X-Frame-Options is set to denied, to prevent clickjacking attacks.
+    In order to allow it
+1. What is JHipster all about? http://jhipster.github.io/ 
+1. Should I consider JHipster and Heroku for Spring Boot / AngularJS / Bootstrap / Npm / Gulp / Yeoman application? 
+    

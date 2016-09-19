@@ -12,7 +12,8 @@ import ro.jtonic.handson.springboot.repositories.CustomerRepository;
 import java.util.List;
 
 /**
- * Created by antonelpazargic on 07/09/16.
+ * Created by Antonel Ernest Pazargic on 07/09/16.
+ * @author Antonel Ernest Pazargic
  */
 @Controller
 public class CustomerController {

@@ -1,7 +1,5 @@
 package ro.jtonic.handson.springboot.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +7,8 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by antonelpazargic on 06/09/16.
+ * Created by Antonel Ernest Pazargic on 06/09/16.
+ * @author Antonel Ernest Pazargic
  */
 @Entity
 public class Customer implements Serializable {

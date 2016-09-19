@@ -5,7 +5,8 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapt
 import ro.jtonic.handson.springboot.entities.Customer;
 
 /**
- * Created by antonelpazargic on 10/09/16.
+ * Created by Antonel Ernest Pazargic on 10/09/16.
+ * @author Antonel Ernest Pazargic
  */
 // Uncomment below if you want the entities @Id id to be serialized in the sent json
 // @Component

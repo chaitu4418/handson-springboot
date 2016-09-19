@@ -7,7 +7,8 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import ro.jtonic.handson.springboot.entities.Customer;
 
 /**
- * Created by antonelpazargic on 06/09/16.
+ * Created by Antonel Ernest Pazargic on 06/09/16.
+ * @author Antonel Ernest Pazargic
  */
 @RepositoryRestResource(path = "customers") // customers is the default by I dropped this annotation in order to see how this can be changed
 public interface CustomerRepository extends JpaRepository<Customer, Long> {

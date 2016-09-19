@@ -4,6 +4,42 @@ spring:
     include:            dev
   jackson:
       default-property-inclusion: non_null
+  main:
+    banner-mode: off
+
+logging:
+  level:
+    org:
+      springframework:  WARN
+      hibernate:        WARN
+      apache:
+        catalina:       WARN
+
+management:
+  port:                 8081
+  context-path:         /admin
+
+server:
+  context-path:         /api
+
+endpoints:
+  info:
+    enabled:            true
+    sensitive:          false
+  shutdown:
+    enabled:            true
+    sensitive:          true
+
+info:
+  app:
+    name:               Handson Spring Boot Application
+    description:        Handson Spring Boot Application
+    version:            0.1.1-SNAPSHOT
+  developers:
+      - name:               Antonel Ernest Pazargic
+        email:              antonel.pazargic@gmail.com
+      - name:               Irina Stan
+        email:              irina.stan@gmail.com
 
 ---
 spring:

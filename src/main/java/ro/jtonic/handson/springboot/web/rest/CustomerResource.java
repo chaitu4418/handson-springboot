@@ -7,7 +7,8 @@ import ro.jtonic.handson.springboot.entities.Customer;
 import ro.jtonic.handson.springboot.repositories.CustomerRepository;
 
 /**
- * Created by antonelpazargic on 07/09/16.
+ * Created by Antonel Ernest Pazargic on 07/09/16.
+ * @author Antonel Ernest Pazargic
  */
 @RestController
 public class CustomerResource {

@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by antonelpazargic on 10/09/16.
+ * Created by Antonel Ernest Pazargic on 10/09/16.
+ * @author Antonel Ernest Pazargic
  */
 @Configuration
 public class ServletsRegistrationConfigurer {
