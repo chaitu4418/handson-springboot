@@ -3,19 +3,18 @@ package ro.jtonic.handson.springboot;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import ro.jtonic.handson.springboot.thirdparty.MelodyGenerator;
 import ro.jtonic.handson.springboot.thirdparty.MusicService;
-import ro.jtonic.handson.springboot.thirdparty.MusicServiceMock.MelodyGenerator;
 
-import javax.inject.Inject;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,13 +24,15 @@ import java.util.List;
  * @author Antonel Ernest Pazargic
  */
 @SpringBootTest
+@ContextConfiguration(classes = {ApplicationConfig.class})
 public class CacheTest extends AbstractTestNGSpringContextTests {
 
     private MusicService musicService;
     private Cache cache;
+
     private MelodyGenerator melodyGenerator;
 
-    @Inject
+    @Autowired
     void config(MusicService musicService, CacheManager cacheManager, MelodyGenerator melodyGenerator) {
         this.musicService = musicService;
         this.cache = cacheManager.getCache("music");
@@ -67,11 +68,4 @@ public class CacheTest extends AbstractTestNGSpringContextTests {
         org.testng.Assert.assertEquals(melodies.get(0), "Melody 1");
     }
 
-    @Configuration
-    static class TestConfig {
-        @Bean
-        MelodyGenerator melodyGenerator() {
-            return Mockito.mock(MelodyGenerator.class);
-        }
-    }
 }

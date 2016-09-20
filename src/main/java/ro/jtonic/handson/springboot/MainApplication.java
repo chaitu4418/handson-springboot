@@ -13,7 +13,6 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-@EnableCaching(proxyTargetClass = true)
 public class MainApplication {
 
 	public static void main(String[] args) {

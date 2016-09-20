@@ -1,9 +1,15 @@
 ## This project is about the spring boot, the latest buzz in the spring community.
 
-#####What I would like to use in this project (which I would like to consider the starting point for any technical assignment;) 
+WARNING:
+=
+1. DO NOT TRY TO DEPLOY A SPRING BOOT APPLICATION ON GOOGLE CLOUD PLATFORM - IT IS VERY COMPLICATED, BUGGY AND IN BETA. TRY HEROKU, CLOUD FOUNDRY OR OPENSHIFT
+
+
+####What I would like to use in this project (which I would like to consider the starting point for any technical assignment;) 
 TODOs:
 -
-1. Spring cache (JSR-107 - JCache, ehcache|Hazelcast)
+1.[V] Spring cache (JSR-107 - JCache, ehcache|Hazelcast)
+1. [OPT] Test the cache
 1. Simple example with the Spring HATEOAS to create correct REST services.
 1. Validation (JSR-303)
 1. i18n

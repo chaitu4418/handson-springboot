@@ -1,0 +1,21 @@
+package ro.jtonic.handson.springboot;
+
+import org.mockito.Mockito;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import ro.jtonic.handson.springboot.thirdparty.MelodyGenerator;
+
+/**
+ * Created by Antonel Ernest Pazargic on 20/09/16.
+ *
+ * @author Antonel Ernest Pazargic
+ */
+@Configuration
+public class SpringTestsConfig {
+
+    @Bean
+    MelodyGenerator melodyGenerator() {
+        return new MelodyGenerator();
+    }
+
+}
