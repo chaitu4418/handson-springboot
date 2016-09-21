@@ -9,6 +9,15 @@ WARNING:
 TODOs:
 -
 1.[V] Spring cache (JSR-107 - JCache, ehcache|Hazelcast)
+1.[>] Include the spring integration
+    1. [V] Configuration with spring boot 
+    1. [V] simple example
+    1. get a file content, do some transformation and then save them back in another file.
+    1. get a file content, split each line using a splitter, and save the information in db
+1. Spring Batch
+    1. configuration
+    1. simple example
+1. Try to integrate swagger as REST services documentation.
 1. [OPT] Test the cache
 1. Simple example with the Spring HATEOAS to create correct REST services.
 1. Validation (JSR-303)
@@ -17,6 +26,11 @@ TODOs:
     1. SPA AngularJS
 1. deploy the jar to github and make it the dependency of another project
 1. integration tests - failsafe maven plugin
+
+1. KPIs - Key performance indicator - 
+    http://www.pnmsoft.com/resources/bpm-tutorial/key-performance-indicators/
+    
+    
 
 1. [V] Simple Spring rest example
 1. [V] Simple Spring MVC example.
@@ -62,7 +76,6 @@ TODOs:
 1. Scheduling example
 1. Spring integration example
 1. Simple example with websockets
-1. Try to integrate swagger as REST services documentation.
 1. Security with stormpath 
         https://docs.stormpath.com/java/spring-boot-web/index.html
 1. Try to use scala, and see how the IntelliJ Idea handle it. If there is no support for this mix then drop it and stay with java8

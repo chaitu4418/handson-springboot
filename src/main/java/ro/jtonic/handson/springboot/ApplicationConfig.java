@@ -3,9 +3,9 @@ package ro.jtonic.handson.springboot;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import ro.jtonic.handson.springboot.thirdparty.MelodyGenerator;
 import ro.jtonic.handson.springboot.thirdparty.MusicService;
 import ro.jtonic.handson.springboot.thirdparty.MusicServiceMock;
-import ro.jtonic.handson.springboot.thirdparty.MelodyGenerator;
 
 /**
  * Created by Antonel Ernest Pazargic on 19/09/16.
