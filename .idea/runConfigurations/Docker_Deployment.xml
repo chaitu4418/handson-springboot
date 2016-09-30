@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Docker Deployment" type="docker-deploy" factoryName="Docker Deployment" singleton="true" server-name="Docker">
+    <deployment type="dockerfile" path="$PROJECT_DIR$/docker-dir/Dockerfile">
+      <settings>
+        <option name="JSONFilePath" value="$PROJECT_DIR$/docker-dir/container_settings.json" />
+        <option name="command" value="" />
+        <option name="containerName" value="handson-springboot-tomcat" />
+        <option name="entrypoint" value="" />
+        <option name="imageTag" value="" />
+        <option name="portBindingsExpanded" value="true" />
+        <option name="startBrowserSettings">
+          <browser start="true" url="http://192.168.99.100:18080/handson-springboot/customers.rest" />
+        </option>
+      </settings>
+    </deployment>
+    <method>
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="clean package -DskipTests -P DEPLOYED" run_configuration_type="MavenRunConfiguration" />
+    </method>
+  </configuration>
+</component>

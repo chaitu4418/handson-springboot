@@ -6,7 +6,7 @@
 	<groupId>ro.jtonic.handson</groupId>
 	<artifactId>handson-springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>${pack}</packaging>
 
 	<name>demo</name>
 	<description>Handson Spring Boot</description>
@@ -134,13 +134,7 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
-
 			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
@@ -153,5 +147,91 @@
 
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>EMBEDDED</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<properties>
+				<pack>jar</pack>
+			</properties>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>DEPLOYED</id>
+
+			<properties>
+				<pack>war</pack>
+			</properties>
+
+			<dependencies>
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-web</artifactId>
+					<exclusions>
+						<exclusion>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-starter-tomcat</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-servlet_3.0_spec</artifactId>
+					<version>1.0</version>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.6</version>
+						<configuration>
+							<outputDirectory>docker-dir/artifact</outputDirectory>
+							<warName>${artifactId}</warName>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-clean-plugin</artifactId>
+						<configuration>
+							<filesets>
+								<fileset>
+									<directory>docker-dir/artifact</directory>
+									<includes>
+										<include>**/*</include>
+										<!--<include>**/*.log</include>-->
+									</includes>
+<!--
+									<excludes>
+										<exclude>**/important.log</exclude>
+										<exclude>**/another-important.log</exclude>
+									</excludes>
+-->
+									<followSymlinks>false</followSymlinks>
+								</fileset>
+							</filesets>
+						</configuration>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>

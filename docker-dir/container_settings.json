@@ -1,0 +1,18 @@
+{
+  "HostConfig": {
+    "PortBindings": {
+      "8081/tcp": [
+        {
+          "HostIp": "0.0.0.0",
+          "HostPort": "18081"
+        }
+      ],
+      "8080/tcp": [
+        {
+          "HostIp": "0.0.0.0",
+          "HostPort": "18080"
+        }
+      ]
+    }
+  }
+}

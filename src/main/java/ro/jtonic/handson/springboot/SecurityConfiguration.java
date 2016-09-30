@@ -19,22 +19,36 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .headers().frameOptions().sameOrigin().and() // Careful this allows clickjacking attacks
             .authorizeRequests()
                 .antMatchers("/admin/info", "/admin/health").permitAll()
                 .antMatchers("/index.html", "/api/**").hasRole("user")
                 .antMatchers("/console/**").hasRole("admin")
                 .antMatchers("/admin/**").hasRole("admin")
-                .anyRequest().denyAll()
+                .anyRequest().permitAll()
             .and()
                 .csrf().disable()
-                .formLogin().permitAll()
-            .and()
-            .logout()
-                .logoutUrl("/logout")
-                .permitAll()
         ;
     }
+
+    // @Override
+    // protected void configure(HttpSecurity http) throws Exception {
+    //     http
+    //         .headers().frameOptions().sameOrigin().and() // Careful this allows clickjacking attacks
+    //         .authorizeRequests()
+    //             .antMatchers("/admin/info", "/admin/health").permitAll()
+    //             .antMatchers("/index.html", "/api/**").hasRole("user")
+    //             .antMatchers("/console*//**").hasRole("admin")
+    //             .antMatchers("/admin*//**").hasRole("admin")
+    //             .anyRequest().denyAll()
+    //         .and()
+    //             .csrf().disable()
+    //             .formLogin().permitAll()
+    //         .and()
+    //         .logout()
+    //             .logoutUrl("/logout")
+    //             .permitAll()
+    //     ;
+    // }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

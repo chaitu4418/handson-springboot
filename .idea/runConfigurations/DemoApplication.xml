@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="ro.jtonic.handson.springboot.MainApplication" />
+    <option name="HIDE_BANNER" value="true" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <module name="handson-springboot" />
+    <envs />
+    <method />
+  </configuration>
+</component>

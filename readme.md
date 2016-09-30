@@ -4,10 +4,24 @@ WARNING:
 =
 1. DO NOT TRY TO DEPLOY A SPRING BOOT APPLICATION ON GOOGLE CLOUD PLATFORM - IT IS VERY COMPLICATED, BUGGY AND IN BETA. TRY HEROKU, CLOUD FOUNDRY OR OPENSHIFT
 
+##Issues
+
+1. Fix the security issues
+1. Fix the problems with the swagger documentation: 
+    1. security 
+    1. return code is not the correct one.
+1. The same application context for embedded and deployed application. 
+
 
 ####What I would like to use in this project (which I would like to consider the starting point for any technical assignment;) 
 TODOs:
 -
+1. [V] Deploy the spring boot application in a tomcat container hosted by a docker container.
+    Issues:
+    1. Use different maven profiles for embedded tomcat(default) and deployed war in a docker tomcat container.
+    1. The actuator endpoints don't work
+    1. The security is messed.
+1. Refactor the project as a multi module maven - REST API, WEB application.
 1.[V] Spring cache (JSR-107 - JCache, ehcache|Hazelcast)
 1.[>] Include the spring integration
     1. [V] Configuration with spring boot 

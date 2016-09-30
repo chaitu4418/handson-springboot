@@ -22,6 +22,11 @@ crashlytics-build.properties
 fabric.properties
 
 .DS_Store
-.idea/
+.idea/artifacts
+.idea/*.xml
+.idea/dictionaries
+.idea/libraries
+.idea/copyright
+
 *.iml
 target/
