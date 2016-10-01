@@ -24,10 +24,10 @@ logging:
 
 management:
   port:                 8081
-  context-path:         /admin
+  context-path:         /handson-springboot/admin
 
 server:
-  context-path:         /api
+  context-path:         /handson-springboot/api
 
 endpoints:
   info:
